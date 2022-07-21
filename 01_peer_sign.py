@@ -34,7 +34,7 @@ class KeyPeer:
             out.write(public_key.exportKey().decode('utf-8'))
 
     def sign (self):
-        message = "Hi"
+        message = input("Enter a message: ")
         digest = SHA256.new()
         digest.update(message.encode('utf-8'))
         with open ("private_key.pem", "r") as myfile:
